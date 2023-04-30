@@ -36,7 +36,9 @@ let router = createBrowserRouter(
                 {
                     path: "Blog",
                     element: <Blog></Blog>
+                    
                 },
+
                 {
                     path: "Login",
                     element: <Login></Login>

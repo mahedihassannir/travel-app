@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { contexM } from '../AuthProvider/ContexProvider';
 
 
-import { FaEye, FaEyeSlash, FaSlash } from 'react-icons/fa';
+import { FaEye, FaEyeSlash, FaFacebook, FaGoogle, FaSlash } from 'react-icons/fa';
 
 const Login = () => {
 
@@ -56,6 +56,16 @@ const Login = () => {
 
 
 
+    let [disible, enable] = useState(true)
+
+
+    let handleChacked = (e) => {
+        let chack = e.target.checked
+
+        enable(chack)
+
+    }
+    console.log(disible);
 
 
     return (
@@ -88,16 +98,45 @@ const Login = () => {
 
 
                     <div className='flex justify-between px-10 py-10'>
-                        <input type="checkbox" name="chacked" id="" />
+                        <input onClick={handleChacked} type="checkbox" name="chacked" id="" />
 
                         <button>
                             forgot password
                         </button>
                     </div>
                     <div className=''>
-                        <input value="Login" className=' bg-orange-400 ml-5 w-11/12 py-5 rounded-md text-black' type="submit" />
+                        <input disabled={!disible} value="Login" className=' bg-orange-400 ml-5 w-11/12 py-5 rounded-md text-black' type="submit" />
 
                     </div>
+
+
+                    {/* here is new login system  */}
+
+                    <div>
+                        <button className=' ml-24 mt-5  border-2 py-5 w-1/2 rounded-[25px]'>
+                            <div className='pl-4  flex items-center gap-3'>
+
+                                <FaGoogle className='text-3xl text-blue-300'></FaGoogle>
+                                singIn with google
+                            </div>
+
+                        </button>
+
+                        <button className=' ml-24 mt-5  border-2 py-5 w-1/2 rounded-[25px]'>
+                            <div className='pl-4  flex items-center gap-3'>
+
+                                <FaFacebook className='text-3xl text-blue-500'></FaFacebook>
+                                singIn with Facebook
+                            </div>
+
+                        </button>
+
+                    </div>
+
+
+                    {/* here is new login system  ends */}
+
+
                     {/* here is err section of password */}
                     <div>
                         <p className='text-red-600 pt-4 text-center'>{err}</p>

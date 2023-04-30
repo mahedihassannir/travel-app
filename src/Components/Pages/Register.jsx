@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { contexM } from '../AuthProvider/ContexProvider';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import Swal from 'sweetalert2'
 
 const Register = () => {
     let { Register } = useContext(contexM)
@@ -36,6 +37,32 @@ const Register = () => {
 
     }
 
+
+
+    let [anable, Disible] = useState(false)
+
+
+    let enableDisable = (e) => {
+
+        let anabled = e.target.checked
+        console.log(anable);
+        Disible(anabled)
+
+
+    }
+
+    let clickRes = () => {
+
+
+        Swal.fire(
+            'success!',
+            'account created done',
+            'success'
+        )
+
+    }
+
+
     return (
         <div>
             <div className='h-screen'>
@@ -54,7 +81,7 @@ const Register = () => {
 
                             {/* here is hide and show btn  */}
 
-                            <div className='absolute top-4 pl-[450px]' onClick={() => SetHide(!show)}>
+                            <div className='absolute top-4 pl-[450px] G' onClick={() => SetHide(!show)}>
                                 {
                                     show ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>
                                 }
@@ -67,14 +94,14 @@ const Register = () => {
 
 
                         <div className='flex justify-between px-10 py-10'>
-                            <input type="checkbox" name="chacked" id="" />
+                            <input onClick={enableDisable} type="checkbox" name="chacked" id="" />
 
                             <button>
                                 forgot password
                             </button>
                         </div>
                         <div className=''>
-                            <input value="Register" className=' bg-orange-400 ml-5 w-11/12 py-5 rounded-md text-black' type="submit" />
+                            <input onClick={clickRes}  disabled={!anable} value="Register" className=' cursor-pointer bg-orange-400 ml-5 w-11/12 py-5 rounded-md text-black' type="submit" />
 
                         </div>
 
