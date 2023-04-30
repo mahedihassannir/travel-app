@@ -1,6 +1,6 @@
 .bg-background {
   background-image:  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0,0,0.8 )),  url("../Css/Rectangle1.png");
-  height: 100vh;
+  height: 110vh;
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
