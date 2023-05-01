@@ -13,12 +13,22 @@ let auth = getAuth(app)
 
 const ContexProvider = ({ children }) => {
 
+
+    let [loder, SetLoding] = useState(true)
+
+
+
+
     let Register = (email, password) => {
+        SetLoding(true)
+
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
 
     let SingIn = (email, password) => {
+
+        SetLoding(true)
 
         return signInWithEmailAndPassword(auth, email, password)
 
@@ -45,11 +55,14 @@ const ContexProvider = ({ children }) => {
     }, [])
 
     let Logout = () => {
+        SetLoding(true)
+
         return signOut(auth)
     }
 
 
     let infoProvider = {
+        loder,
         Register,
         SingIn,
         user,

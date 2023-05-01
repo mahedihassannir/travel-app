@@ -31,7 +31,7 @@ const Header = () => {
             <nav className='  text-white flex justify-between pt-2 items-center  px-20'>
 
                 <Link to="/">
-                    <img className='h-20' src="https://i.ibb.co/JKx1xBm/logo.png" alt="" />
+                    <img className='h-20' src="https://i.ibb.co/zNm5nVN/image.png" alt="" />
                 </Link>
 
                 <div>

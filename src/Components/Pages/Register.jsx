@@ -9,7 +9,7 @@ import Swal from 'sweetalert2'
 const Register = () => {
     let { Register } = useContext(contexM)
 
-
+    
     let [show, SetHide] = useState(false)
 
 
